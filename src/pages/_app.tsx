@@ -17,7 +17,7 @@ function SpreadshopApp({ Component, pageProps }) {
           <link rel="apple-touch-icon" href="/favicon/spreadshop-favicon.png" type="image/png" />
           <meta
             name="description"
-            content={`Spreadshop Contentful Website Demo`}
+            content={`Spreadshop Amplience Website Demo`}
             key="description"
           />
         </Head>
