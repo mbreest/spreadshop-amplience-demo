@@ -2,10 +2,10 @@
 import React from 'react';
 import ErrorPage from 'next/error';
 
-import { getLandingPage } from 'lib/api1';
+import { getLandingPage } from 'lib/api';
 import { isPreviewEnabled } from 'lib/preview';
 import { PageHead } from 'components/page-head';
-import { BlockRenderer1 } from 'components/renderer1/block-renderer';
+import { BlockRenderer1 } from 'components/renderer/block-renderer';
 import { TypeLandingPage } from 'lib/customtypes';
 
 type LandingProps = {

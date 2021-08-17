@@ -2,15 +2,15 @@ import _ from 'lodash';
 import React from 'react';
 
 import { TypeSection } from 'lib/customtypes';
-import { Hero } from 'components/renderer1/hero';
-import { Banner } from 'components/renderer1/banner';
-import { Carousel } from 'components/renderer1/carousel';
-import { FeaturedUsp } from 'components/renderer1/featuredUsp';
-import { UspList } from 'components/renderer1/uspList';
-import { SingleAsset } from 'components/renderer1/singleAsset';
-import { Calculator } from 'components/renderer1/calculator';
-import { BlogRoll } from 'components/renderer1/blogRoll';
-import { Testimonial } from 'components/renderer1/testimonial';
+import { Hero } from 'components/renderer/hero';
+import { Banner } from 'components/renderer/banner';
+import { Carousel } from 'components/renderer/carousel';
+import { FeaturedUsp } from 'components/renderer/featuredUsp';
+import { UspList } from 'components/renderer/uspList';
+import { SingleAsset } from 'components/renderer/singleAsset';
+import { Calculator } from 'components/renderer/calculator';
+import { BlogRoll } from 'components/renderer/blogRoll';
+import { Testimonial } from 'components/renderer/testimonial';
 
 type BlockRendererProps = {
   block: TypeSection | TypeSection[];

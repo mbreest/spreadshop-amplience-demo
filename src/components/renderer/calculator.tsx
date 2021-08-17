@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { TypeCalculator } from 'lib/customtypes';
-import { Background } from './background';
-import { Cta1 } from './cta';
+import { Background } from '../background';
+import { Cta } from '../cta';
 import React from 'react';
 
 export const Calculator = ({ text, background, cta, calculator }: TypeCalculator) => {
@@ -23,7 +23,7 @@ export const Calculator = ({ text, background, cta, calculator }: TypeCalculator
           </div>
         </div>
         <div className="flex w-full justify-center pt-8 pb-8">
-          <Cta1 cta={cta} />
+          <Cta cta={cta} />
         </div>
       </div>
     </Background>

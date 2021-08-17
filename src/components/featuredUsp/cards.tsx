@@ -1,8 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Card from './Card';
+import Card from './card';
 import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api1';
+import { defaultClientConfig } from 'lib/api';
 
 const Cards = ({ cardData }) => {
   return (

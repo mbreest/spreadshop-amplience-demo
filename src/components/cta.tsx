@@ -6,7 +6,7 @@ type CtaProps = {
   cta: TypeCTA;
 };
 
-export const Cta1 = ({ cta }: CtaProps) => {
+export const Cta = ({ cta }: CtaProps) => {
   let linkProps;
 
   if (cta && cta.linkTarget && cta.linkType) {

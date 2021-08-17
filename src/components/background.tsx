@@ -1,8 +1,8 @@
 import React from 'react';
-import SectionBackground from '../Section/SectionBackground';
+import SectionBackground from './sectionBackground2';
 import { TypeBackground } from 'lib/customtypes';
 import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api1';
+import { defaultClientConfig } from 'lib/api';
 
 type BackgroundProps = {
   background: TypeBackground;

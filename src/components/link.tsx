@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { useNavigation } from './useNavigation';
+import { useNavigation } from '../lib/useNavigation';
 
 type LinkProps = {
   type?: string;

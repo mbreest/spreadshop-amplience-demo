@@ -1,6 +1,6 @@
 import { TypeHero } from 'lib/customtypes';
-import { Background } from './background';
-import { Cta1 } from './cta';
+import { Background } from '../background';
+import { Cta } from '../cta';
 
 export const Hero = ({ text, background, cta }: TypeHero) => {
   return (
@@ -11,7 +11,7 @@ export const Hero = ({ text, background, cta }: TypeHero) => {
             {text.title}
           </h1>
           <div className="leading-relaxed text-lg text-gray-700 py-6">{text.details}</div>
-          <Cta1 cta={cta} />
+          <Cta cta={cta} />
         </div>
       </div>
     </Background>

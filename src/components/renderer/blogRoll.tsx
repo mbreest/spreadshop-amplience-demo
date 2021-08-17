@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { Link } from './link';
+import { Link } from '../link';
 import { TypeBlogRoll } from 'lib/customtypes';
-import { Background } from './background';
-import { Cta1 } from './cta';
+import { Background } from '../background';
+import { Cta } from '../cta';
 import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api1';
+import { defaultClientConfig } from 'lib/api';
 
 export const BlogRoll = ({ text, cta, background, topPosts }: TypeBlogRoll) => {
   return (
@@ -34,7 +34,7 @@ export const BlogRoll = ({ text, cta, background, topPosts }: TypeBlogRoll) => {
         </div>
 
         <div className="flex w-full justify-center pt-8 pb-8">
-          <Cta1 cta={cta} />
+          <Cta cta={cta} />
         </div>
       </div>
     </Background>

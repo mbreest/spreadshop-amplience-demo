@@ -12,7 +12,6 @@
     "prettier": "prettier --write 'src/**/*.{jsx,js,ts,tsx}'",
     "prettier:check": "prettier --check 'src/**/*.{jsx,js,ts,tsx}'",
     "tsc": "tsc",
-    "generate-types": "cf-content-types-generator -s $CF_SPACE_ID -t $CF_CMA_TOKEN -o src/lib/types",
     "ts": "node -r esm -r ts-node/register/transpile-only"
   },
   "dependencies": {

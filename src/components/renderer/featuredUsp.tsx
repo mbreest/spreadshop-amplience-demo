@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { TypeFeaturedUSP } from 'lib/customtypes';
-import { Background } from './background';
-import { Cta1 } from './cta';
-import Cards from './FeaturedUsp/Cards';
+import { Background } from '../background';
+import { Cta } from '../cta';
+import Cards from '../featuredUsp/cards';
 
 export const FeaturedUsp = ({ text, cta, background, usps }: TypeFeaturedUSP) => {
   return (
@@ -14,7 +14,7 @@ export const FeaturedUsp = ({ text, cta, background, usps }: TypeFeaturedUSP) =>
         </div>
         <Cards cardData={usps} />
         <div className="flex w-full justify-center pt-8 pb-8">
-          <Cta1 cta={cta} />
+          <Cta cta={cta} />
         </div>
       </div>
     </Background>

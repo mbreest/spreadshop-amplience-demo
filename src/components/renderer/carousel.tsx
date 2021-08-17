@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { TypeCarousel } from 'lib/customtypes';
-import { Background } from './background';
-import { Cta1 } from './cta';
+import { Background } from '../background';
+import { Cta } from '../cta';
 import { Tab, Tabs } from 'components/tabs';
 import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api1';
+import { defaultClientConfig } from 'lib/api';
 
 export const Carousel = ({ text, background, cta, categories }: TypeCarousel) => {
   return (
@@ -63,7 +63,7 @@ export const Carousel = ({ text, background, cta, categories }: TypeCarousel) =>
         )}
       </div>
       <div className="flex w-full justify-center pt-8 pb-8">
-        <Cta1 cta={cta} />
+        <Cta cta={cta} />
       </div>
     </Background>
   );

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import { disablePreview } from 'lib/preview';
-import { useNavigation } from '../components/renderer1/useNavigation';
+import { useNavigation } from '../lib/useNavigation';
 import { useRouter } from 'next/router';
 
 import Select from 'react-select';
