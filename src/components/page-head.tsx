@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { TypeSEO } from 'lib/customtypes';
+import { TypeSEO } from 'lib/types';
 
 type PageHeadProps = {
   seo: TypeSEO;

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import { TypeSection } from 'lib/customtypes';
+import { TypeSection } from 'lib/types';
 import { Hero } from 'components/renderer/hero';
 import { Banner } from 'components/renderer/banner';
 import { Carousel } from 'components/renderer/carousel';
@@ -17,12 +17,12 @@ type BlockRendererProps = {
   segment: string;
 };
 
-const BlockRenderer1 = ({ block, segment }: BlockRendererProps) => {
+const BlockRenderer = ({ block, segment }: BlockRendererProps) => {
   if (Array.isArray(block)) {
     return (
       <>
         {block.map((b) => (
-          <BlockRenderer1 key={`block-${b._meta.deliveryId}`} block={b} segment={segment} />
+          <BlockRenderer key={`block-${b._meta.deliveryId}`} block={b} segment={segment} />
         ))}
       </>
     );
@@ -58,4 +58,4 @@ const ContentTypeMap = {
   ['https://amp-rsa.amplience.com/component-testimonial.json']: Testimonial,
 };
 
-export { BlockRenderer1 };
+export { BlockRenderer };

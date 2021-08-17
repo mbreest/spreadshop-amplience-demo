@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { TypeUSPList } from 'lib/customtypes';
-import { Background } from '../background';
+import { TypeUSPList } from 'lib/types';
+import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { Link } from '../link';
 import { Image } from 'dc-delivery-sdk-js';

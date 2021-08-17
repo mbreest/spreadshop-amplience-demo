@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { TypeBanner } from 'lib/customtypes';
-import { Background } from '../background';
+import { TypeBanner } from 'lib/types';
+import { Background } from '../section/background';
 import { Cta } from '../cta';
 
 export const Banner = ({ text, cta, background }: TypeBanner) => {

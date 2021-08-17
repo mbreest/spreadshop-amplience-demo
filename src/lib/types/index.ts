@@ -1,6 +1,6 @@
 export type { Product, Color } from './product';
-export type { TypeLandingPage } from './landingPage1';
-export type { TypeBlogPost } from './blogPost1';
+export type { TypeLandingPage } from './landingPage';
+export type { TypeBlogPost } from './blogPost';
 export type { TypeSEO, TypeImage } from './generic';
 export type {
   TypeSection,
@@ -13,7 +13,7 @@ export type {
   TypeSingleAsset,
   TypeUSPList,
   TypeBlogRoll,
-} from './landingPage1';
+} from './landingPage';
 export type {
   TypeBackground,
   TypeCTA,
@@ -25,4 +25,4 @@ export type {
   TypeQuote,
   TypeCalculatorText,
   TypeUSPLayout,
-} from './landingPage1';
+} from './landingPage';

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { Link } from '../link';
-import { TypeBlogRoll } from 'lib/customtypes';
-import { Background } from '../background';
+import { TypeBlogRoll } from 'lib/types';
+import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from 'lib/api';

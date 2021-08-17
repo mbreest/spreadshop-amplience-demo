@@ -1,6 +1,6 @@
 import { ContentMeta } from 'dc-delivery-sdk-js';
 import { TypeSEO, TypeImage } from './generic';
-import { TypeBlogPost } from './blogPost1';
+import { TypeBlogPost } from './blogPost';
 
 export interface TypeLandingPage {
   _meta: ContentMeta;

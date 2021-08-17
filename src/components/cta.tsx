@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from './link';
-import { TypeCTA } from 'lib/customtypes';
+import { TypeCTA } from 'lib/types';
 
 type CtaProps = {
   cta: TypeCTA;

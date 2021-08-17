@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/camelcase */
-import { TypeSingleAsset } from 'lib/customtypes';
-import { Background } from '../background';
+import { TypeSingleAsset } from 'lib/types';
+import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from 'lib/api';

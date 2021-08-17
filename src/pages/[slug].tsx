@@ -5,8 +5,8 @@ import ErrorPage from 'next/error';
 import { getLandingPage } from 'lib/api';
 import { isPreviewEnabled } from 'lib/preview';
 import { PageHead } from 'components/page-head';
-import { BlockRenderer1 } from 'components/renderer/block-renderer';
-import { TypeLandingPage } from 'lib/customtypes';
+import { BlockRenderer } from 'components/renderer/block-renderer';
+import { TypeLandingPage } from 'lib/types';
 
 type LandingProps = {
   landing: TypeLandingPage;
@@ -23,8 +23,8 @@ export default function Landing({ landing, segment }: LandingProps) {
   return (
     <div className="w-full pb-16">
       <PageHead seo={seo} />
-      <BlockRenderer1 block={hero1} segment={segment} />
-      <BlockRenderer1 block={sections1} segment={segment} />
+      <BlockRenderer block={hero1} segment={segment} />
+      <BlockRenderer block={sections1} segment={segment} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { TypeHero } from 'lib/customtypes';
-import { Background } from '../background';
+import { TypeHero } from 'lib/types';
+import { Background } from '../section/background';
 import { Cta } from '../cta';
 
 export const Hero = ({ text, background, cta }: TypeHero) => {

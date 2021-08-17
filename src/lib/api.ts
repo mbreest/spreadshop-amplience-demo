@@ -1,7 +1,7 @@
 import { ContentClient } from 'dc-delivery-sdk-js';
 import { ContentClientConfigV2 } from 'dc-delivery-sdk-js';
 import stringify from 'fast-safe-stringify';
-import { TypeLandingPage } from './customtypes';
+import { TypeLandingPage } from './types';
 
 export const defaultClientConfig: ContentClientConfigV2 = {
   hubName: process.env.DYNAMIC_CONTENT_HUB_NAME || '',
