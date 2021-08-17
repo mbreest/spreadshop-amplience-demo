@@ -1,0 +1,43 @@
+.react-datepicker-popper {
+  z-index: 1000 !important;
+}
+
+.sprd-container {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .sprd-container {
+    max-width: 94%;
+  }
+}
+@media (min-width: 1024px) {
+  .sprd-container {
+    max-width: 88%;
+  }
+}
+@media (min-width: 1280px) {
+  .sprd-container {
+    max-width: 80%;
+  }
+}
+
+.sprd-bg__background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sprd-bg__overlay {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+}
+.swiper-wrapper {
+  width: 50%;
+}
+.swiper-slide {
+  width: auto;
+}

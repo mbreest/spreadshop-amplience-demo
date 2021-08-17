@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto/Roboto_regular.woff2') format('woff2'),
+    url('../../assets/fonts/Roboto/Roboto_regular.woff') format('woff'),
+    url('../../assets/fonts/Roboto/Roboto_regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto/Roboto_bold.woff2') format('woff2'),
+    url('../../assets/fonts/Roboto/Roboto_bold.woff') format('woff'),
+    url('../../assets/fonts/Roboto/Roboto_bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Headline */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Montserrat/Montserrat_SPRD_medium.woff2') format('woff2'),
+    url('../../assets/fonts/Montserrat/Montserrat_SPRD_medium.woff') format('woff'),
+    url('../../assets/fonts/Montserrat/Montserrat_SPRD_medium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* icon Font */
+@font-face {
+  font-family: 'mobilemarketplace';
+  src: url('../../assets/fonts/mm/mm.woff') format('woff'),
+    url('../../assets/fonts/mm/mm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.h0 {
+  font-family: Montserrat, sans-serif;
+  font-size: 2.625rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.3;
+}
+p {
+  font-family: Roboto, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #333;
+  letter-spacing: 0.02em;
+}

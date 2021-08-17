@@ -1,0 +1,83 @@
+{
+  "name": "cms-contentful",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "NODE_OPTIONS='--inspect' next",
+    "build": "next build",
+    "build:css": "tailwind build -i src/styles/tailwind.css -o src/styles/general/styles.css",
+    "postcss": "postcss src/styles/tailwind.css -o src/styles/general/styles.css",
+    "start": "next start",
+    "export": "next export",
+    "lint": "eslint . --ext '.ts,.tsx,.js,.jsx'",
+    "prettier": "prettier --write 'src/**/*.{jsx,js,ts,tsx}'",
+    "prettier:check": "prettier --check 'src/**/*.{jsx,js,ts,tsx}'",
+    "tsc": "tsc",
+    "generate-types": "cf-content-types-generator -s $CF_SPACE_ID -t $CF_CMA_TOKEN -o src/lib/types",
+    "ts": "node -r esm -r ts-node/register/transpile-only"
+  },
+  "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^14.1.2",
+    "@contentful/rich-text-react-renderer": "^14.1.3",
+    "@contentful/rich-text-types": "^14.1.2",
+    "@tailwindcss/typography": "^0.4.1",
+    "@types/react-datepicker": "^4.1.4",
+    "@types/react-select": "^4.0.17",
+    "classnames": "^2.3.1",
+    "contentful": "^8.4.2",
+    "cookie": "^0.4.1",
+    "date-fns": "^2.19.0",
+    "dc-delivery-sdk-js": "^0.10.0",
+    "fast-safe-stringify": "^2.0.7",
+    "lodash": "^4.17.21",
+    "next": "^11.0.1",
+    "react": "^16.14.0",
+    "react-datepicker": "^4.1.1",
+    "react-dom": "^16.14.0",
+    "react-markdown": "^7.0.0",
+    "react-player": "^2.9.0",
+    "react-router": "^5.2.0",
+    "react-select": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^14.14.41",
+    "@types/react": "^16.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "autoprefixer": "^10.3.1",
+    "cf-content-types-generator": "^1.5.2",
+    "dotenv": "8.2.0",
+    "eslint": "^7.0.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "esm": "^3.2.25",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "postcss": "^8.3.5",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.2",
+    "swiper": "^6.7.5",
+    "tailwindcss": "^2.2.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^3.9.9"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
