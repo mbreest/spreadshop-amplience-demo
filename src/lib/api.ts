@@ -1,4 +1,4 @@
-import { ContentClient } from 'dc-delivery-sdk-js';
+import { ContentClient, StagingEnvironmentFactory } from 'dc-delivery-sdk-js';
 import { ContentClientConfigV2 } from 'dc-delivery-sdk-js';
 import stringify from 'fast-safe-stringify';
 import { TypeLandingPage, TypeSection } from './types';
@@ -12,14 +12,16 @@ type GetLandingPageParams = {
   locale: Locale;
   preview?: boolean;
   slug: string;
+  stagingEnvironment?: string;
 };
 
 export async function getLandingPage(params: GetLandingPageParams) {
-  const { preview, locale, slug } = params;
+  const { preview, locale, slug, stagingEnvironment } = params;
   const client = new ContentClient({
     hubName: 'spreadshirtdevpoc',
     locale: locale.code,
-  });
+    stagingEnvironment: stagingEnvironment,
+  } as ContentClientConfigV2);
 
   const res = await client.getContentItemByKey(slug);
 
@@ -30,14 +32,16 @@ type GetComponentParams = {
   locale: Locale;
   preview?: boolean;
   id: string;
+  stagingEnvironment?: string;
 };
 
 export async function getComponent(params: GetComponentParams) {
-  const { preview, locale, id } = params;
+  const { preview, locale, id, stagingEnvironment } = params;
   const client = new ContentClient({
     hubName: 'spreadshirtdevpoc',
     locale: locale.code,
-  });
+    stagingEnvironment: stagingEnvironment,
+  } as ContentClientConfigV2);
 
   const res = await client.getContentItemById(id);
 

@@ -27,10 +27,11 @@ export default function Landing({ component, segment }: LandingProps) {
 export async function getServerSideProps({ params, query, locale, req }) {
   const id = query.id;
 
+  const stagingEnvironment = query?.vse ? query.vse : '';
   const renderDate =
     isPreviewEnabled(query) && query.renderDate ? new Date(query.renderDate) : new Date();
   const preview = isPreviewEnabled(query);
-  const component = await getComponent({ locale, id, preview });
+  const component = await getComponent({ locale, id, preview, stagingEnvironment });
 
   const segment = query.segment || req.cookies.segment || 'default';
 
