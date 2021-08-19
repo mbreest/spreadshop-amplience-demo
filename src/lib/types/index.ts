@@ -1,5 +1,6 @@
 export type { Product, Color } from './product';
 export type { TypeLandingPage } from './landingPage';
+export type { TypeHelpdeskPage } from './helpdeskPage';
 export type { TypeBlogPost } from './blogPost';
 export type { TypeSEO, TypeImage } from './generic';
 export type {

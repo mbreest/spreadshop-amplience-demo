@@ -5,6 +5,7 @@ import 'styles/index.css';
 import 'swiper/swiper.min.css';
 import { PreviewBanner } from 'components/preview-banner';
 import { LocaleContext } from 'lib/translations';
+import { TopNavigation } from 'components/top-navigation';
 
 function SpreadshopApp({ Component, pageProps }) {
   const { locale, ...otherPageProps } = pageProps;
@@ -23,6 +24,7 @@ function SpreadshopApp({ Component, pageProps }) {
         </Head>
         <PreviewBanner />
         <div className="w-full flex flex-col relative">
+          <TopNavigation />
           <Component {...otherPageProps} />
         </div>
       </div>

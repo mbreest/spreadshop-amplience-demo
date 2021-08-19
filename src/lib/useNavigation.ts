@@ -15,6 +15,12 @@ function linkToPage(type: string, slug: string, isPreview: boolean): LinkProps {
         as: withPreviewParam(`/${slug}`, isPreview),
       };
     }
+    case 'Helpdesk Article': {
+      return {
+        href: withPreviewParam(`/helpdesk/[slug]`, isPreview),
+        as: withPreviewParam(`/helpdesk/${slug}`, isPreview),
+      };
+    }
     default: {
       throw new Error('Page type is not supported yet');
     }

@@ -31,14 +31,9 @@ export default function Landing({ landing, segment }: LandingProps) {
 
 export async function getServerSideProps({ params, query, locale, req }) {
   const slug = String((params && params.slug) ?? 'homepage');
-
   const stagingEnvironment = query?.vse ? query.vse : '';
-  const renderDate =
-    isPreviewEnabled(query) && query.renderDate ? new Date(query.renderDate) : new Date();
   const preview = isPreviewEnabled(query);
-
   const landing = await getLandingPage({ slug, preview, locale, stagingEnvironment });
-
   const segment = query.segment || req.cookies.segment || 'default';
 
   return {
