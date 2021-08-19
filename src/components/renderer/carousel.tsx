@@ -3,8 +3,7 @@ import { TypeCarousel } from 'lib/types';
 import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { Tab, Tabs } from 'components/tabs';
-import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 export const Carousel = ({ text, background, cta, categories }: TypeCarousel) => {
   return (
@@ -25,10 +24,7 @@ export const Carousel = ({ text, background, cta, categories }: TypeCarousel) =>
                   {category.illustrations.map(function (illustration, idx1) {
                     return (
                       <div key={'category-' + idx} className="flex flex-shrink-0 w-60 p-2">
-                        <img
-                          key={idx1}
-                          src={new Image(illustration, defaultClientConfig).url().build()}
-                        />
+                        <img key={idx1} src={ImageUrlFactory.createUrl(illustration)} />
                       </div>
                     );
                   })}
@@ -48,10 +44,7 @@ export const Carousel = ({ text, background, cta, categories }: TypeCarousel) =>
                         <div
                           key={'category-' + idx}
                           className="flex-shrink-0 w-1/2 md:w-1/4 md:pr-4 pb-4">
-                          <img
-                            key={idx1}
-                            src={new Image(illustration, defaultClientConfig).url().build()}
-                          />
+                          <img key={idx1} src={ImageUrlFactory.createUrl(illustration)} />
                         </div>
                       );
                     })}

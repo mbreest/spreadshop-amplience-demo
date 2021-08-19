@@ -1,8 +1,7 @@
 import React from 'react';
 import SectionBackground from './sectionBackground';
 import { TypeBackground } from 'lib/types';
-import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 type BackgroundProps = {
   background: TypeBackground;
@@ -21,9 +20,7 @@ export const Background = ({ background, children }: BackgroundProps) => {
   // TODO image
   const backgroundStyle = {
     backgroundImage:
-      "url('" +
-      (background.image ? new Image(background.image, defaultClientConfig).url().build() : '') +
-      "')",
+      "url('" + (background.image ? ImageUrlFactory.createUrl(background.image) : '') + "')",
   } as React.CSSProperties;
 
   const overlayStyle = {

@@ -5,6 +5,7 @@ import { Cta } from '../cta';
 import { Link } from '../link';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 export const UspList = ({ text, background, cta, layout, usps }: TypeUSPList) => {
   return (
@@ -26,10 +27,7 @@ export const UspList = ({ text, background, cta, layout, usps }: TypeUSPList) =>
                 <div key={'usplist-' + idx} className="w-60 pr-8 pt-4 grid justify-items-center">
                   {usp.illustration && (
                     <div className="w-30 h-30">
-                      <img
-                        src={new Image(usp.illustration, defaultClientConfig).url().build()}
-                        className="max-h-28"
-                      />
+                      <img src={ImageUrlFactory.createUrl(usp.illustration)} className="max-h-28" />
                     </div>
                   )}
                   <div className="grid justify-items-center">

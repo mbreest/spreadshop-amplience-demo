@@ -3,8 +3,7 @@ import { Link } from '../link';
 import { TypeBlogRoll } from 'lib/types';
 import { Background } from '../section/background';
 import { Cta } from '../cta';
-import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 export const BlogRoll = ({ text, cta, background, topPosts }: TypeBlogRoll) => {
   return (
@@ -22,7 +21,7 @@ export const BlogRoll = ({ text, cta, background, topPosts }: TypeBlogRoll) => {
                   <div
                     key={'article-' + idx}
                     className="pl-4 pr-4 pb-4 flex-shrink-0 w-full md:w-1/3">
-                    <img src={new Image(post.illustration, defaultClientConfig).url().build()} />
+                    <img src={ImageUrlFactory.createUrl(post.illustration)} />
                     <div className="font-bold">{post.title}</div>
                     <Link {...{ type: 'Blog Post', path: post._meta.deliveryKey }}>
                       <a className="text-yellow-600 underline">Weiterlesen</a>

@@ -2,8 +2,7 @@
 import { TypeTestimonial } from 'lib/types';
 import { Background } from '../section/background';
 import { Cta } from '../cta';
-import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 export const Testimonial = ({ text, cta, background, quotes, logos }: TypeTestimonial) => {
   return (
@@ -21,7 +20,7 @@ export const Testimonial = ({ text, cta, background, quotes, logos }: TypeTestim
                   key={idx}
                   className="w-full flex-shrink-0 md:flex md:flex-row md:p-8 items-center">
                   <div className="md:w-2/5">
-                    {<img src={new Image(quote.illustration, defaultClientConfig).url().build()} />}
+                    {<img src={ImageUrlFactory.createUrl(quote.illustration)} />}
                   </div>
                   <div className="md:w-3/5 md:pl-8 ">
                     <div>{quote.quote}</div>
@@ -38,7 +37,7 @@ export const Testimonial = ({ text, cta, background, quotes, logos }: TypeTestim
             logos.logos.map(function (logo, idx) {
               return (
                 <div key={idx} className="flex-shrink-0 p-4">
-                  <img src={new Image(logo, defaultClientConfig).url().build()} className="w-28" />
+                  <img src={ImageUrlFactory.createUrl(logo)} className="w-28" />
                 </div>
               );
             })}

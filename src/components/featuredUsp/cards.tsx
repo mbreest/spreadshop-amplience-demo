@@ -1,8 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from './card';
-import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 const Cards = ({ cardData }) => {
   return (
@@ -26,11 +25,7 @@ const Cards = ({ cardData }) => {
                 title={usp.title}
                 details={usp.details}
                 hasImg={usp.illustration != undefined}
-                imgSrc={
-                  usp.illustration
-                    ? new Image(usp.illustration, defaultClientConfig).url().build()
-                    : null
-                }
+                imgSrc={usp.illustration ? ImageUrlFactory.createUrl(usp.illustration) : null}
               />
             </SwiperSlide>
           );

@@ -4,6 +4,7 @@ import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from 'lib/api';
+import { ImageUrlFactory } from 'lib/image';
 
 export const SingleAsset = ({ text, background, cta, illustrations }: TypeSingleAsset) => {
   return (
@@ -20,7 +21,7 @@ export const SingleAsset = ({ text, background, cta, illustrations }: TypeSingle
                 if (illustration) {
                   return (
                     <div key={'sa-illustration-' + idx} className="flex flex-shrink-0 w-96 p-2">
-                      <img src={new Image(illustration, defaultClientConfig).url().build()} />
+                      <img src={ImageUrlFactory.createUrl(illustration)} />
                     </div>
                   );
                 }
