@@ -22,7 +22,6 @@ function SpreadshopApp({ Component, pageProps }) {
             key="description"
           />
         </Head>
-        <PreviewBanner />
         <div className="w-full flex flex-col relative">
           <TopNavigation />
           <Component {...otherPageProps} />
