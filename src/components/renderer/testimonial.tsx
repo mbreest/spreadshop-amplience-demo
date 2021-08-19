@@ -3,6 +3,8 @@ import { TypeTestimonial } from 'lib/types';
 import { Background } from '../section/background';
 import { Cta } from '../cta';
 import { ImageUrlFactory } from 'lib/image';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export const Testimonial = ({ text, cta, background, quotes, logos }: TypeTestimonial) => {
   return (
@@ -23,7 +25,19 @@ export const Testimonial = ({ text, cta, background, quotes, logos }: TypeTestim
                     {<img src={ImageUrlFactory.createUrl(quote.illustration)} />}
                   </div>
                   <div className="md:w-3/5 md:pl-8 ">
-                    <div>{quote.quote}</div>
+                    <div>
+                      <ReactMarkdown
+                        components={{
+                          ol: ({ node, ...props }) => (
+                            <ol
+                              style={{ listStyleType: 'decimal', paddingLeft: '1em' }}
+                              {...props}
+                            />
+                          ),
+                        }}>
+                        {quote.quote}
+                      </ReactMarkdown>
+                    </div>
                     <div className="font-bold pt-4">{quote.author}</div>
                   </div>
                 </div>
