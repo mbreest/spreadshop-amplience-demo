@@ -1,6 +1,7 @@
 import { ContentMeta } from 'dc-delivery-sdk-js';
 import { TypeSEO, TypeImage } from './generic';
 import { TypeBlogPost } from './blogPost';
+import { TypeHelpdeskPage } from './helpdeskPage';
 
 export interface TypeLandingPage {
   _meta: ContentMeta;
@@ -76,6 +77,20 @@ export interface TypeBlogRoll extends TypeSection {
   cta: TypeCTA;
   category: string;
   topPosts: TypeBlogPost[];
+}
+
+export interface TypeFAQ extends TypeSection {
+  text: TypeText;
+  background: TypeBackground;
+  questions: TypeFAQQuestions;
+  entries: TypeHelpdeskPage[];
+}
+
+export interface TypeFAQQuestions {
+  title: string;
+  description: string;
+  cta1: TypeCTA;
+  cta2: TypeCTA;
 }
 
 export interface TypeUSPLayout {

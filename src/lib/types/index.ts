@@ -14,6 +14,7 @@ export type {
   TypeSingleAsset,
   TypeUSPList,
   TypeBlogRoll,
+  TypeFAQ,
 } from './landingPage';
 export type {
   TypeBackground,
@@ -26,4 +27,5 @@ export type {
   TypeQuote,
   TypeCalculatorText,
   TypeUSPLayout,
+  TypeFAQQuestions,
 } from './landingPage';

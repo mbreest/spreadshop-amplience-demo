@@ -11,6 +11,7 @@ import { SingleAsset } from 'components/renderer/singleAsset';
 import { Calculator } from 'components/renderer/calculator';
 import { BlogRoll } from 'components/renderer/blogRoll';
 import { Testimonial } from 'components/renderer/testimonial';
+import { FAQ } from 'components/renderer/faq';
 
 type BlockRendererProps = {
   block: TypeSection | TypeSection[];
@@ -56,6 +57,7 @@ const ContentTypeMap = {
   ['https://amp-rsa.amplience.com/component-calculator.json']: Calculator,
   ['https://amp-rsa.amplience.com/component-blog-roll.json']: BlogRoll,
   ['https://amp-rsa.amplience.com/component-testimonial.json']: Testimonial,
+  ['https://amp-rsa.amplience.com/component-faq.json']: FAQ,
 };
 
 export { BlockRenderer };
