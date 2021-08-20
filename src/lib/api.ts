@@ -1,7 +1,7 @@
 import { ContentClient, StagingEnvironmentFactory } from 'dc-delivery-sdk-js';
 import { ContentClientConfigV2 } from 'dc-delivery-sdk-js';
 import stringify from 'fast-safe-stringify';
-import { TypeLandingPage, TypeSection, TypeHelpdeskPage } from './types';
+import { TypeLandingPage, TypeSection, TypeHelpdeskPage, TypeBlogPostPage } from './types';
 
 export const defaultClientConfig: ContentClientConfigV2 = {
   hubName: process.env.DYNAMIC_CONTENT_HUB_NAME || '',
@@ -39,6 +39,19 @@ export async function getHelpdeskPage(params: GetPageParams) {
   const res = await client.getContentItemByKey(slug);
 
   return JSON.parse(stringify(res.body)) as TypeHelpdeskPage;
+}
+
+export async function getBlogPostPage(params: GetPageParams) {
+  const { preview, locale, slug, stagingEnvironment } = params;
+  const client = new ContentClient({
+    hubName: 'spreadshirtdevpoc',
+    locale: locale.code,
+    stagingEnvironment: stagingEnvironment,
+  } as ContentClientConfigV2);
+
+  const res = await client.getContentItemByKey(slug);
+
+  return JSON.parse(stringify(res.body)) as TypeBlogPostPage;
 }
 
 type GetPagesParams = {

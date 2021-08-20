@@ -21,8 +21,8 @@ export const BlogRoll = ({ text, cta, background, topPosts }: TypeBlogRoll) => {
                   <div
                     key={'article-' + idx}
                     className="pl-4 pr-4 pb-4 flex-shrink-0 w-full md:w-1/3">
-                    <img src={ImageUrlFactory.createUrl(post.illustration)} />
-                    <div className="font-bold">{post.title}</div>
+                    <img src={ImageUrlFactory.createUrl(post.post?.illustration)} />
+                    <div className="font-bold">{post.post?.title}</div>
                     <Link {...{ type: 'Blog Post', path: post._meta.deliveryKey }}>
                       <a className="text-yellow-600 underline">Weiterlesen</a>
                     </Link>
