@@ -22,7 +22,7 @@ export default function HelpdeskArticle({ page }: HelpdeskArticleProps) {
       <PageHead seo={page.seo} />
       <div className="sprd-container mx-auto p-8 h-full">
         <div className="h0 pt-4 text-3xl font-medium leading-tight text-gray-900">
-          {page.seo?.title}
+          {page.article?.title}
         </div>
         <div className="leading-relaxed text-lg text-gray-700 pt-8">
           <ReactMarkdown

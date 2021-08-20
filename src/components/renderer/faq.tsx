@@ -16,7 +16,7 @@ export const FAQ = ({ text, background, entries, questions }: TypeFAQ) => {
           {entries.map(function (entry, idx) {
             return (
               <>
-                <AccordionItem toggle={'section-' + idx}>{entry.seo.title}</AccordionItem>
+                <AccordionItem toggle={'section-' + idx}>{entry.article?.title}</AccordionItem>
                 <AccordionPanel id={'section-' + idx}>
                   <ReactMarkdown
                     components={{

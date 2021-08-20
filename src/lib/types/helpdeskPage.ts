@@ -8,5 +8,6 @@ export interface TypeHelpdeskPage {
 }
 
 export interface TypeHelpdeskArticle {
+  title: string;
   text: string;
 }
