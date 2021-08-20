@@ -93,6 +93,18 @@ export interface TypeFAQQuestions {
   cta2: TypeCTA;
 }
 
+export interface TypeGrid extends TypeSection {
+  text: TypeText;
+  background: TypeBackground;
+  grid: TypeGridEntry[];
+  cta: TypeCTA;
+}
+
+export interface TypeGridEntry {
+  illustration: TypeImage;
+  link: TypeLink;
+}
+
 export interface TypeUSPLayout {
   twoColumn: boolean;
 }

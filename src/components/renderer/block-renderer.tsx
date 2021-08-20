@@ -12,6 +12,7 @@ import { Calculator } from 'components/renderer/calculator';
 import { BlogRoll } from 'components/renderer/blogRoll';
 import { Testimonial } from 'components/renderer/testimonial';
 import { FAQ } from 'components/renderer/faq';
+import { Grid } from 'components/renderer/grid';
 
 type BlockRendererProps = {
   block: TypeSection | TypeSection[];
@@ -58,6 +59,7 @@ const ContentTypeMap = {
   ['https://amp-rsa.amplience.com/component-blog-roll.json']: BlogRoll,
   ['https://amp-rsa.amplience.com/component-testimonial.json']: Testimonial,
   ['https://amp-rsa.amplience.com/component-faq.json']: FAQ,
+  ['https://amp-rsa.amplience.com/component-grid.json']: Grid,
 };
 
 export { BlockRenderer };

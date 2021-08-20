@@ -15,6 +15,7 @@ export type {
   TypeUSPList,
   TypeBlogRoll,
   TypeFAQ,
+  TypeGrid,
 } from './landingPage';
 export type {
   TypeBackground,
@@ -28,4 +29,5 @@ export type {
   TypeCalculatorText,
   TypeUSPLayout,
   TypeFAQQuestions,
+  TypeGridEntry,
 } from './landingPage';
