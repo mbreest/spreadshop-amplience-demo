@@ -8,7 +8,7 @@ import { LocaleContext } from 'lib/translations';
 import { TopNavigation } from 'components/top-navigation';
 
 function SpreadshopApp({ Component, pageProps }) {
-  const { locale, ...otherPageProps } = pageProps;
+  const { locale, renderComponent, ...otherPageProps } = pageProps;
 
   return (
     <LocaleContext.Provider value={locale}>
@@ -23,7 +23,7 @@ function SpreadshopApp({ Component, pageProps }) {
           />
         </Head>
         <div className="w-full flex flex-col relative">
-          <TopNavigation />
+          {!renderComponent && <TopNavigation />}
           <Component {...otherPageProps} />
         </div>
       </div>

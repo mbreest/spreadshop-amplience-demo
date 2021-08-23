@@ -39,12 +39,15 @@ export async function getServerSideProps({ params, query, locale, req }) {
   for (const section of landing.sections) {
     if (section._meta.schema == 'https://amp-rsa.amplience.com/component-blog-roll.json') {
       const blogRoll = section as TypeBlogRoll;
-      blogRoll.topPosts = await getBlogPosts({
+      const topPosts = await getBlogPosts({
         preview,
         locale,
         limit: 3,
         category: blogRoll.category,
       });
+      if (topPosts) {
+        blogRoll.topPosts = topPosts;
+      }
     }
   }
 

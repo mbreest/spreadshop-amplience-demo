@@ -11,4 +11,10 @@ export interface TypeBlogPost {
   illustration: TypeImage;
   title: string;
   text: string;
+  text1: TypeBlogPostRichText[];
+}
+
+export interface TypeBlogPostRichText {
+  type: string;
+  data: any;
 }

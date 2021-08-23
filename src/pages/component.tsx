@@ -10,6 +10,7 @@ import { BlockRenderer } from 'components/renderer/block-renderer';
 type LandingProps = {
   component: TypeSection;
   segment: string;
+  renderComponent: boolean;
 };
 
 export default function Landing({ component, segment }: LandingProps) {
@@ -46,6 +47,6 @@ export async function getServerSideProps({ params, query, locale, req }) {
   const segment = query.segment || req.cookies.segment || 'default';
 
   return {
-    props: { component, segment },
+    props: { component, segment, renderComponent: true },
   };
 }
