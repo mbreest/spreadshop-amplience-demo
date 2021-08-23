@@ -10,10 +10,17 @@ export interface LinkProps {
 function linkToPage(type: string, slug: string, isPreview: boolean): LinkProps {
   switch (type) {
     case 'Landing Page': {
-      return {
-        href: withPreviewParam(`/[slug]`, isPreview),
-        as: withPreviewParam(`/${slug}`, isPreview),
-      };
+      if (slug == 'blog') {
+        return {
+          href: withPreviewParam(`/blog`, isPreview),
+          as: withPreviewParam(`/blog`, isPreview),
+        };
+      } else {
+        return {
+          href: withPreviewParam(`/[slug]`, isPreview),
+          as: withPreviewParam(`/${slug}`, isPreview),
+        };
+      }
     }
     case 'Blog Post': {
       return {
