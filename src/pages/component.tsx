@@ -2,9 +2,9 @@
 import React from 'react';
 import ErrorPage from 'next/error';
 
-import { getComponent } from 'lib/api';
+import { getComponent, getBlogPosts } from 'lib/api';
 import { isPreviewEnabled } from 'lib/preview';
-import { TypeSection } from 'lib/types';
+import { TypeBlogRoll, TypeSection } from 'lib/types';
 import { BlockRenderer } from 'components/renderer/block-renderer';
 
 type LandingProps = {
@@ -32,6 +32,16 @@ export async function getServerSideProps({ params, query, locale, req }) {
     isPreviewEnabled(query) && query.renderDate ? new Date(query.renderDate) : new Date();
   const preview = isPreviewEnabled(query);
   const component = await getComponent({ locale, id, preview, stagingEnvironment });
+
+  if (component._meta.schema == 'https://amp-rsa.amplience.com/component-blog-roll.json') {
+    const blogRoll = component as TypeBlogRoll;
+    blogRoll.topPosts = await getBlogPosts({
+      preview,
+      locale,
+      limit: 3,
+      category: blogRoll.category,
+    });
+  }
 
   const segment = query.segment || req.cookies.segment || 'default';
 

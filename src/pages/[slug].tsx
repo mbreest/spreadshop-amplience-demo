@@ -2,11 +2,11 @@
 import React from 'react';
 import ErrorPage from 'next/error';
 
-import { getLandingPage } from 'lib/api';
+import { getLandingPage, getBlogPosts } from 'lib/api';
 import { isPreviewEnabled } from 'lib/preview';
 import { PageHead } from 'components/page-head';
 import { BlockRenderer } from 'components/renderer/block-renderer';
-import { TypeLandingPage } from 'lib/types';
+import { TypeBlogRoll, TypeLandingPage } from 'lib/types';
 
 type LandingProps = {
   landing: TypeLandingPage;
@@ -35,6 +35,18 @@ export async function getServerSideProps({ params, query, locale, req }) {
   const preview = isPreviewEnabled(query);
   const landing = await getLandingPage({ slug, preview, locale, stagingEnvironment });
   const segment = query.segment || req.cookies.segment || 'default';
+
+  for (const section of landing.sections) {
+    if (section._meta.schema == 'https://amp-rsa.amplience.com/component-blog-roll.json') {
+      const blogRoll = section as TypeBlogRoll;
+      blogRoll.topPosts = await getBlogPosts({
+        preview,
+        locale,
+        limit: 3,
+        category: blogRoll.category,
+      });
+    }
+  }
 
   return {
     props: { segment, landing },
