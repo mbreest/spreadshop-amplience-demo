@@ -2,6 +2,7 @@ export type { Product, Color } from './product';
 export type { TypeLandingPage } from './landingPage';
 export type { TypeHelpdeskPage } from './helpdeskPage';
 export type { TypeBlogPostPage, TypeBlogPost } from './blogPost';
+export type { TypeBlogCategoryPage, TypeBlogCategory } from './blogCategory';
 export type { TypeSEO, TypeImage } from './generic';
 export type {
   TypeSection,

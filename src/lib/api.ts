@@ -1,7 +1,13 @@
-import { ContentClient, StagingEnvironmentFactory } from 'dc-delivery-sdk-js';
+import { ContentClient } from 'dc-delivery-sdk-js';
 import { ContentClientConfigV2 } from 'dc-delivery-sdk-js';
 import stringify from 'fast-safe-stringify';
-import { TypeLandingPage, TypeSection, TypeHelpdeskPage, TypeBlogPostPage } from './types';
+import {
+  TypeLandingPage,
+  TypeSection,
+  TypeHelpdeskPage,
+  TypeBlogPostPage,
+  TypeBlogCategoryPage,
+} from './types';
 
 export const defaultClientConfig: ContentClientConfigV2 = {
   hubName: process.env.DYNAMIC_CONTENT_HUB_NAME || '',
@@ -54,6 +60,19 @@ export async function getBlogPostPage(params: GetPageParams) {
   return JSON.parse(stringify(res.body)) as TypeBlogPostPage;
 }
 
+export async function getBlogCategoryPage(params: GetPageParams) {
+  const { preview, locale, slug, stagingEnvironment } = params;
+  const client = new ContentClient({
+    hubName: 'spreadshirtdevpoc',
+    locale: locale.code,
+    stagingEnvironment: stagingEnvironment,
+  } as ContentClientConfigV2);
+
+  const res = await client.getContentItemByKey(slug);
+
+  return JSON.parse(stringify(res.body)) as TypeBlogCategoryPage;
+}
+
 type GetPagesParams = {
   locale: Locale;
   preview?: boolean;
@@ -71,12 +90,41 @@ export async function getHelpdeskPages(params: GetPagesParams) {
 
   const res = await client
     .filterByContentType('https://amp-rsa.amplience.com/pagetype-helpdesk-article.json')
-    .page(10)
+    .page(limit)
     .request();
 
   return res.responses.map((r) => {
     return JSON.parse(stringify(r.content)) as TypeHelpdeskPage;
   });
+}
+
+type GetBlogPostsParams = {
+  locale: Locale;
+  preview?: boolean;
+  limit: number;
+  category?: string;
+};
+
+export async function getBlogPosts(params: GetBlogPostsParams) {
+  const { preview, locale, limit, category } = params;
+  const client = new ContentClient({
+    hubName: 'spreadshirtdevpoc',
+    locale: locale.code,
+  } as ContentClientConfigV2);
+
+  try {
+    const res = await client
+      .filterByContentType('https://amp-rsa.amplience.com/pagetype-blog-post.json')
+      .filterBy('/category', category)
+      .page(limit)
+      .request();
+
+    return res.responses.map((r) => {
+      return JSON.parse(stringify(r.content)) as TypeBlogPostPage;
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 type GetComponentParams = {

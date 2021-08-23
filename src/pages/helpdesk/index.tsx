@@ -32,7 +32,7 @@ export async function getServerSideProps({ params, query, locale }) {
   const preview = isPreviewEnabled(query);
   const pages = await getHelpdeskPages({
     locale,
-    limit: 100,
+    limit: 10,
     preview,
   });
   return {

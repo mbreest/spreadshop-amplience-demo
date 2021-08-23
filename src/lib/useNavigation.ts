@@ -15,6 +15,12 @@ function linkToPage(type: string, slug: string, isPreview: boolean): LinkProps {
         as: withPreviewParam(`/${slug}`, isPreview),
       };
     }
+    case 'Blog Post': {
+      return {
+        href: withPreviewParam(`/blog/[slug]`, isPreview),
+        as: withPreviewParam(`/blog/${slug}`, isPreview),
+      };
+    }
     case 'Helpdesk Article': {
       return {
         href: withPreviewParam(`/helpdesk/[slug]`, isPreview),
